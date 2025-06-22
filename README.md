@@ -1,5 +1,7 @@
 # terraform-aws-organization
 
+## This module is part of the yros-cloud-blueprints for cloud foundation
+
 A Terraform module to manage an AWS Organization, including:
 
 * Creating a new AWS Organization or using an existing one
