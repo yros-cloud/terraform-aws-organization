@@ -30,37 +30,62 @@ A Terraform module to manage an AWS Organization, including:
 
 ```hcl
 module "organization" {
-  source = "yrosaguiar/organization/aws"
+    
+  source = "yros-cloud/organization/aws"
+  
+  # Uncomment and set this if you already have an AWS Organization
+  # existing_organization_id = "r-xxxx"
 
-  existing_organization_id = null  # or set to existing root ID like "r-xxxx"
-
+  # You can add more OUs here, such as "security", "networking", "platform", etc.
   organizational_units = {
     workloads      = "Workloads"
     infrastructure = "Infrastructure"
+    # security     = "Security"
+    # networking   = "Networking"
+    # platform     = "Platform"
   }
 
   accounts = {
     development = {
-      email      = "dev@example.com"
+      email      = "youremailgroup+awsdev@example.com"
       name       = "Development"
       parent_key = "workloads"
     }
+
+    staging = {
+      email      = "youremailgroup+awsstaging@example.com"
+      name       = "Staging"
+      parent_key = "workloads"
+    }
+
     production = {
-      email      = "prod@example.com"
+      email      = "youremailgroup+awsproduction@example.com"
       name       = "Production"
       parent_key = "workloads"
     }
+
     shared = {
-      email      = "shared@example.com"
+      email      = "youremailgroup+awsshared@example.com"
       name       = "Shared"
       parent_key = "infrastructure"
     }
   }
 
   tags = {
-    Environment = "org"
     ManagedBy   = "Terraform"
+    Environment = "OrgSetup"
   }
+
+  aws_service_access_principals = [
+    "sso.amazonaws.com",
+    "health.amazonaws.com"
+  ]
+
+  enabled_policy_types = [
+    "SERVICE_CONTROL_POLICY"
+  ]
+
+  feature_set = "ALL"
 }
 ```
 
