@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.2.0](https://github.com/yros-cloud/terraform-aws-organization/compare/v1.1.0...v1.2.0) (2025-06-22)
+
+
+### Features
+
+*  set hcl readme ([99ef229](https://github.com/yros-cloud/terraform-aws-organization/commit/99ef22946bac6476422d3bfd97dcc204eb33209c))
+
 ## [1.1.0](https://github.com/yros-cloud/terraform-aws-organization/compare/v1.0.0...v1.1.0) (2025-06-22)
 
 
