@@ -2,6 +2,11 @@
 
 ## This module is part of the yros-cloud-blueprints for cloud foundation
 
+## AWS Well Architected Links reference:
+
+https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_ous.html
+
+
 A Terraform module to manage an AWS Organization, including:
 
 * Creating a new AWS Organization or using an existing one
