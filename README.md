@@ -102,3 +102,4 @@ Check the [examples/basic](./examples/basic) folder for a full working example.
 ## 📝 License
 
 MIT — see [LICENSE](./LICENSE) file.
+
